@@ -1,0 +1,77 @@
+openapi: 3.0.0
+
+#security:
+#  - apikey: []
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: http://localhost:3000/api
+
+
+info:
+  description: Guesser number project
+  version: 1.0.0
+  title: GUESSER NUMBER API
+  termsOfService: none
+  contact:
+    name: Martín Barreto
+    email: martin_e22@hotmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+tags:
+  - name: guesser
+    description: Guess the number entered
+    externalDocs:
+      description: Find out more about our store
+      url: http://swagger.io
+        
+paths:
+  /guesser/postNumberEntered:
+    post:
+      tags:
+        - guesser
+      summary:  Get the number entered
+      description: Get the number entered efficiently
+      operationId: getNumberEntered
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                number:
+                   type: number
+                   format: int64
+              required:
+                - number
+        description: obtain a price quickly
+        required: true
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  state:
+                    type: string
+                    enum:
+                      - ok
+                      - ko
+                    example: ok
+                  comment:
+                    type: string
+                    example: El numero introducido es X
+        '400':
+          description: Bad request
+        '401':
+          description: API key is missing or invalid
+        '405':
+          description: Invalid input
+        '500':
+          description: Unexpected error.
+      #security:
+        #- apikey: []
