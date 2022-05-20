@@ -1,0 +1,48 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+   <script  type="text/javascript">
+      function adivina()
+      {
+      operaciones=0;
+      min=1;
+      max=10000000000;
+      encontrado=0;
+      
+      alert('Adivinando');
+      if (isNaN(parseFloat(document.getElementById('numero').value)) || document.getElementById('numero').value<min || document.getElementById('numero').value>max)
+      {
+      alert('No es un número ó el número está fuera del intervalo');
+      
+      }
+      else
+      {
+      while (encontrado==0)
+      {
+      operaciones=operaciones+1;
+      
+      if (document.getElementById('numero').value==(max+min)/2)
+      {
+      encontrado=1;
+      }
+      if (document.getElementById('numero').value > ((max+min)/2))
+      {
+      min=(max+min)/2;
+      
+      }
+      if (document.getElementById('numero').value < ((max+min)/2))
+      {
+      max=(max+min)/2;
+      }
+      
+      }
+      alert('El nº es '+(max+min)/2);
+      alert('Adivinado en '+operaciones+' operaciones');
+      }
+      }
+   </script>
+</head>
+<body>
+   <input type=password id=numero name=numero>
+   <input type=button id=adivinar value='Adivinar' onclick="adivina();">
+</body>
+</html>

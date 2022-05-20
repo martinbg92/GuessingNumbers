@@ -1,0 +1,8 @@
+***FRON-TEND***
+The front-end has been developed using the React library which is supported/rendered with Next.js. 
+To run it we must go to the path: **GuessingNumbers/frontend/guessing_number_gui** and run **npm run launch**
+
+***BACK-END**
+The back-end has been developed in node.js with express.js develop a little bit the structure that would have a bigger project than just getting a number. To run it you must go to the path **GuessingNumbers/backend/src** and **run npm run start**
+
+I have included a couple of simple solutions, one of them made with javascript&HTML=**HTML&JS_simple_solution** and the other with PHP=**PHP_simple_solution**.
